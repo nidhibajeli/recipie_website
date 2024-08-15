@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Recipes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            text-align: center;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin:0;
+        }
+
+        header {
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #ff7e5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+        }
+
+        .login-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff7e5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #feb47b;
+        }
+
+        .recipes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recipes-list li {
+            margin: 10px 0;
+        }
+
+        .recipes-list a {
+            text-decoration: none;
+            color: #ff7e5f;
+            font-size: 1.2em;
+        }
+
+        .recipes-list a:hover {
+            color: #feb47b;
+        }
+
+        .recipes-list img {
+            width: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .recipe {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .recipe img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .recipe h2 {
+            margin: 10px 0;
+            font-size: 2em;
+        }
+
+        .recipe p {
+            font-size: 1em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Landing Page -->
+    <header>
+        <h1>Welcome to Cooking Recipes</h1>
+        <p>Discover delicious recipes and cooking tips!</p>
+        <a href="#" class="btn" onclick="showLoginPage()">Login</a>
+    </header>
+
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage" style="display: none;">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+
+    <!-- Recipes List Page -->
+    <div id="recipesListPage" style="display: none;">
+        <header>
+            <h1>Delicious and Healthy Avocado Recipes</h1>
+        </header>
+        <ul class="recipes-list">
+            <li><a href="#recipe1" onclick="showRecipe('recipe1')"><img src="C:\Users\bajel\Downloads\images\toas.jpg" alt="Avocado Toast"> Avocado Toast</a></li>
+            <li><a href="#recipe2" onclick="showRecipe('recipe2')"><img src="C:\Users\bajel\Desktop\ff.jpg"> Avocado Smoothie</a></li>
+            <li><a href="#recipe3" onclick="showRecipe('recipe3')"><img src="C:\Users\bajel\Desktop\salad.jpg"> Avocado Salad</a></li>
+            <li><a href="#recipe4" onclick="showRecipe('recipe4')"><img src="C:\Users\bajel\Desktop\egg salad.jpg"> Avocado Egg Salad</a></li>
+            <li><a href="#recipe5" onclick="showRecipe('recipe5')"><img src="C:\Users\bajel\Desktop\chicken.jpg"> Avocado Chicken Salad</a></li>
+            <li><a href="#recipe6" onclick="showRecipe('recipe6')"><img src= "C:\Users\bajel\Desktop\salsa.jpg"> Avocado Salsa</a></li>
+            <li><a href="#recipe7" onclick="showRecipe('recipe7')"><img src="C:\Users\bajel\Desktop\pasta.jpg"> Avocado Pasta</a></li>
+            <li><a href="#recipe8" onclick="showRecipe('recipe8')"><img src="C:\Users\bajel\Desktop\taco.jpg"> Avocado Tacos</a></li>
+            <li><a href="#recipe9" onclick="showRecipe('recipe9')"><img src="C:\Users\bajel\Desktop\brownie.jpg" alt="Avocado Brownies"> Avocado Brownies</a></li>
+            <li><a href="#recipe10" onclick="showRecipe('recipe10')"><img src="C:\Users\bajel\Desktop\icecream.jpg"> Avocado Ice Cream</a></li>
+        </ul>
+    </div>
+
+    <!-- Individual Recipe Pages -->
+    <div id="recipe1" class="recipe" style="display: none;">
+        <img src="C:\Users\bajel\Downloads\images\toas.jpg" alt="Avocado Toast">
+        <h2>Avocado Toast</h2>
+        <p><strong>Ingredients:</strong> 1 avocado, 2 slices whole grain bread, 1/2 lime, salt, pepper, red pepper flakes (optional).</p>
+        <p><strong>Instructions:</strong> Mash the avocado with lime juice, salt, and pepper. Spread on toasted bread. Sprinkle red pepper flakes if desired.</p>
+        <button class="btn" onclick="showRecipesList()">Back to List</button>
+    </div>
+
+    <div id="recipe2" class="recipe" style="display: none;">
+        <img src="C:\Users\bajel\Desktop\ff.jpg" alt="Avocado Smoothie">
+        <h2>Avocado Smoothie</h2>
+        <p><strong>Ingredients:</strong> 1 avocado, 1 banana, 1 cup spinach, 1 cup almond milk, 1 tablespoon honey.</p>
+        <p><strong>Instructions:</strong> Blend all ingredients until smooth. Serve chilled.</p>
+        <button class="btn" onclick="showRecipesList()">Back to List</button>
+    </div>
+
+    <div id="recipe3" class="recipe" style="display: none;">
+        <img src="C:\Users\bajel\Desktop\salad.jpg" alt="Avocado Salad">
+        <h2>Avocado Salad</h2>
+        <p><strong>Ingredients:</strong> 2 avocados, 1 cucumber, 1 tomato, 1/2 red onion, 2 tablespoons olive oil, 1 tablespoon lemon juice, salt, pepper.</p>
+        <p><strong>Instructions:</strong> Dice all vegetables. Mix with olive oil, lemon juice, salt, and pepper. Serve fresh.</p>
+        <button class="btn" onclick="showRecipesList()">Back to List</button>
+    </div>
+
+    <div id="recipe4" class="recipe" style="display: none;">
+        <img src="C:\Users\bajel\Desktop\egg salad.jpg" alt="Avocado Egg Salad">
+        <h2>Avocado Egg Salad</h2>
+        <p><strong>Ingredients:</strong> 2 avocados, 4 hard-boiled eggs, 1/4 cup mayonnaise, 1 tablespoon mustard, salt, pepper.</p>
+        <p><strong>Instructions:</strong> Mash avocados and eggs together. Mix in mayonnaise, mustard, salt, and pepper. Serve chilled.</p>
+        <button class="btn" onclick="showRecipesList()">Back to List</button>
+    </div>
+
+    <div id="recipe5" class="recipe" style="display: none;">
+        <img src="C:\Users\bajel\Desktop\chicken.jpg" alt="Avocado Chicken Salad">
+        <h2>Avocado Chicken Salad</h2>
+        <p><strong>Ingredients:</strong> 2 avocados, 1 cup cooked chicken, 1/4 cup mayonnaise, 1 tablespoon lemon juice, salt, pepper.</p>
+        <p><strong>Instructions:</strong> Dice avocados and chicken. Mix with mayonnaise, lemon juice, salt, and pepper. Serve chilled.</p>
+        <button class="btn" onclick="showRecipesList()">Back to List</button>
+    </div>
+
+    <div id="recipe6" class="recipe" style="display: none;">
+        <img src="C:\Users\bajel\Desktop\salsa.jpg" alt="Avocado Salsa">
+        <h2>Avocado Salsa</h2>
+        <p><strong>Ingredients:</strong> 2 avocados, 2 tomatoes, 1/2 red onion, 1/4 cup cilantro, 1 lime, salt, pepper.</p>
+        <p><strong>Instructions:</strong> Dice avocados, tomatoes, and red onion. Mix with chopped cilantro, lime juice, salt, and pepper. Serve fresh.</p>
+        <button class="btn" onclick="showRecipesList()">Back to List</button>
+    </div>
+
+    <div id="recipe7" class="recipe" style="display: none;">
+        <img src="C:\Users\bajel\Desktop\pasta.jpg" alt="Avocado Pasta">
+        <h2>Avocado Pasta</h2>
+        <p><strong>Ingredients:</strong> 2 avocados, 2 cups cooked pasta, 1/4 cup basil, 1/4 cup Parmesan cheese, 2 tablespoons olive oil, 1 clove garlic, salt, pepper.</p>
+        <p><strong>Instructions:</strong> Blend avocados, basil, Parmesan cheese, olive oil, garlic, salt, and pepper. Mix with cooked pasta. Serve immediately.</p>
+        <button class="btn" onclick="showRecipesList()">Back to List</button>
+    </div>
+
+    <div id="recipe8" class="recipe" style="display: none;">
+        <img src="C:\Users\bajel\Desktop\taco.jpg" alt="Avocado Tacos">
+        <h2>Avocado Tacos</h2>
+        <p><strong>Ingredients:</strong> 2 avocados, 4 small tortillas, 1/2 cup black beans, 1/4 cup corn, 1/4 cup red cabbage, 1 lime, salt, pepper.</p>
+        <p><strong>Instructions:</strong> Slice avocados and place on tortillas with black beans, corn, and shredded red cabbage. Squeeze lime juice over and season with salt and pepper. Serve immediately.</p>
+        <button class="btn" onclick="showRecipesList()">Back to List</button>
+    </div>
+
+    <div id="recipe9" class="recipe" style="display: none;">
+        <img src="C:\Users\bajel\Desktop\brownie.jpg" alt="Avocado Brownies">
+        <h2>Avocado Brownies</h2>
+        <p><strong>Ingredients:</strong> 2 avocados, 1/2 cup cocoa powder, 1/2 cup almond flour, 1/2 cup maple syrup, 2 eggs, 1 teaspoon vanilla extract, 1/2 teaspoon baking soda, pinch of salt.</p>
+        <p><strong>Instructions:</strong> Blend all ingredients until smooth. Pour into a baking dish and bake at 350°F (175°C) for 20-25 minutes. Let cool before serving.</p>
+        <button class="btn" onclick="showRecipesList()">Back to List</button>
+    </div>
+
+    <div id="recipe10" class="recipe" style="display: none;">
+        <img src="C:\Users\bajel\Desktop\icecream.jpg" alt="Avocado Ice Cream">
+        <h2>Avocado Ice Cream</h2>
+        <p><strong>Ingredients:</strong> 2 avocados, 1 cup coconut milk, 1/2 cup honey, 1 teaspoon vanilla extract, pinch of salt.</p>
+        <p><strong>Instructions:</strong> Blend all ingredients until smooth. Freeze for at least 4 hours before serving.</p>
+        <button class="btn" onclick="showRecipesList()">Back to List</button>
+    </div>
+
+    <script>
+        function showLoginPage() {
+            document.querySelector('header').style.display = 'none';
+            document.getElementById('loginPage').style.display = 'block';
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'Nidhi' && password === 'food') {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('recipesListPage').style.display = 'block';
+            } else {
+                document.getElementById('error-message').textContent = 'Invalid username or password';
+            }
+        });
+
+        function showRecipe(recipeId) {
+            document.getElementById('recipesListPage').style.display = 'none';
+            document.querySelectorAll('.recipe').forEach(function(recipe) {
+                recipe.style.display = 'none';
+            });
+            document.getElementById(recipeId).style.display = 'block';
+        }
+
+        function showRecipesList() {
+            document.querySelectorAll('.recipe').forEach(function(recipe) {
+                recipe.style.display = 'none';
+            });
+            document.getElementById('recipesListPage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
