@@ -1,0 +1,121 @@
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            text-align: center;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin:0;
+        }
+
+        header {
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #ff7e5f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+        }
+
+        .login-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff7e5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #feb47b;
+        }
+
+        .recipes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recipes-list li {
+            margin: 10px 0;
+        }
+
+        .recipes-list a {
+            text-decoration: none;
+            color: #ff7e5f;
+            font-size: 1.2em;
+        }
+
+        .recipes-list a:hover {
+            color: #feb47b;
+        }
+
+        .recipes-list img {
+            width: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .recipe {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .recipe img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .recipe h2 {
+            margin: 10px 0;
+            font-size: 2em;
+        }
+
+        .recipe p {
+            font-size: 1em;
+            color: #666;
+        }
